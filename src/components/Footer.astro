@@ -1,0 +1,111 @@
+---
+import Icon from './Icon.astro';
+const currentYear = new Date().getFullYear();
+---
+
+<footer>
+	<div class="group">
+		<p>
+			Crafted in Barcelona using <a href="https://astro.build/">Astro</a>
+			<Icon icon="rocket-launch" size="1.4em" />
+		</p>
+		<p>&copy; {currentYear} Sergio Rodríguez Vázquez</p>
+	</div>
+	<p class="socials">
+		<a href="https://www.linkedin.com/in/sergiorodriguezvazquez/" class="social-link"> 
+			<Icon icon="linkedin-logo" size="1.2em" /> LinkedIn
+		</a>
+		<a href="https://www.github.com/SergioRgVz" class="social-link">
+			<Icon icon="github-logo" size="1.2em" /> GitHub
+		</a>
+		<a href='mailto:sergiorodriguezvazquez99@gmail.com?Subject=Interested%20in%20work%20with%20you!' class="social-link">
+			<Icon icon="paper-plane-tilt" size="1.2em" /> Email
+		</a>
+		<a href="https://drive.google.com/file/d/1hOfZznpQV3HDm-z8SXS3ixcF_ItQgQ80/view?usp=sharing" class="social-link">
+			<Icon icon="pdf" size="1.2em" /> Resume
+		</a>
+	</p>
+</footer>
+<style>
+	footer {
+		display: flex;
+		flex-direction: column;
+		gap: 3rem;
+		margin-top: auto;
+		padding: 3rem 2rem 3rem;
+		text-align: center;
+		color: var(--gray-400);
+		font-size: var(--text-sm);
+		background: var(--gray-999);
+		border-top: 1px solid var(--gray-800);
+	}
+
+	footer a {
+		color: var(--gray-400);
+		text-decoration: 1px solid underline transparent;
+		text-underline-offset: 0.25em;
+		transition: all var(--theme-transition);
+	}
+
+	footer a:hover,
+	footer a:focus {
+		color: var(--gray-200);
+		text-decoration-color: currentColor;
+	}
+
+	.heart {
+		color: #ff4d4d;
+		display: inline-block;
+		animation: heartbeat 1.5s ease infinite;
+	}
+
+	.group {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+	}
+
+	.socials {
+		display: flex;
+		justify-content: center;
+		gap: 1.5rem;
+		flex-wrap: wrap;
+	}
+
+	.social-link {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		transition: transform var(--theme-transition);
+		padding: 0.5rem;
+		border-radius: 0.5rem;
+	}
+
+	.social-link:hover {
+		transform: translateY(-2px);
+		background: var(--gray-800);
+	}
+
+	@keyframes heartbeat {
+		0%, 100% { transform: scale(1); }
+		50% { transform: scale(1.1); }
+	}
+
+	@media (min-width: 50em) {
+		footer {
+			flex-direction: row;
+			justify-content: space-between;
+			padding: 2.5rem 5rem;
+		}
+
+		.group {
+			flex-direction: row;
+			gap: 1rem;
+			flex-wrap: wrap;
+		}
+
+		.socials {
+			justify-content: flex-end;
+		}
+	}
+</style>

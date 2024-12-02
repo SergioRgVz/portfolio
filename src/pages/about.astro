@@ -1,0 +1,390 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+import ContactCTA from '../components/ContactCTA.astro';
+import Hero from '../components/Hero.astro';
+import Icon from '../components/Icon.astro';
+import { Image } from 'astro:assets';
+
+---
+
+<BaseLayout title="About | Jeanine White" description="About Jeanine White Lorem Ipsum">
+	<div class="stack gap-20">
+	<script>
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const elements = document.querySelectorAll('.animate-on-scroll');
+      elements.forEach(el => observer.observe(el));
+    });
+  </script>
+		<main class="wrapper about animate-on-scroll" style="--animation-delay: 0.3s">
+			<Hero
+				class="animate-on-scroll" style="--animation-delay: 0.3s"
+				title="About"
+				tagline="Thanks for stopping by. Read below to learn more about myself and my background."
+			>
+
+				<Image
+					src="/assets/outside.jpg"
+					width={1553}
+					height={873}
+					alt="Sergio Rodriguez outside"
+					loading="eager"
+					class="animate-on-scroll" style="--animation-delay: 0.3s"
+				/>
+			</Hero>
+
+			<section>
+				<h2 class="section-title animate-on-scroll --animation-delay: 0.3s">Background</h2>
+				<div class="content animate-on-scroll --animation-delay: 0.3s max-width: 25ch; margin: 0 auto;" style="max-width: 70ch; margin: 0 auto;">
+					<p class="mb-4">
+						Hi! I'm Sergio, a Software Engineer from Cádiz who recently moved to Barcelona. My journey into tech has been pretty interesting - it all started when I was as child and my brother was studying Computer Science, he showed me this world and from there I started to take some interest in technology. After some years I found myself studying Computer Science too in the web development specialty. 
+					</p>
+					<p class="mb-4">
+						I began my career at a defense company working on computer vision projects for autonomous systems and object detection. That experience sparked my passion for AI's transformative potential. I started developing my skills in Artificial Intelligence through DeepLearning.AI certifications. Specifically, I completed the Machine Learning Specialization, where I gained expertise in supervised learning and neural networks. Currently, I'm pursuing the Deep Learning Specialization to deepen my understanding of CNNs and sequence models.
+					</p>
+					<p class="mb-4">
+						I love diving into anything tech-related, especially AI applications. When I'm not working, you'll probably find me trying out new coding projects, reading about the latest tech developments.
+					</p>
+					<p class="mb-4">
+						Right now, I'm working on some cool projects involving computer vision and audio analysis. My background includes working with Python, TensorFlow, and various AI tools, but what really drives me is seeing how these technologies can solve real problems.
+					</p>
+					<p class="mb-4">
+					Outside the tech world, I like hanging out at a coffee shop with friends. I also enjoy a good book, watching films, photography, and playing video games when I can. And doing some travelling when I get a good offer.
+					</p>
+					<p class="mb-4">
+						I'm always up for a good chat about tech or collaborating on interesting projects. Feel free to reach out - I'd love to hear your ideas or just talk about what's new in the world of AI and technology.
+					</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title animate-on-scroll" style="--animation-delay: 0.3s">Education</h2>
+				<div class="content animate-on-scroll" style="--animation-delay: 0.3s">
+					<div class="education-grid">
+						<div class="education-item">
+							<div class="education-header">
+								<h4>Bachelor's Degree in Computer Science</h4>
+								<p class="institution">Universidad de Cádiz</p>
+							</div>
+							<div class="education-details">
+								<span class="location"><Icon icon="map_pin" size="1.2em" /> Cádiz, Spain</span>
+								<span class="duration"><Icon icon="calendar" size="1.2em" /> September 2017 - July 2024</span>
+							</div>
+						</div>
+
+						<div class="education-item">
+							<div class="education-header">
+								<h4>Erasmus Exchange Program in Computer Science</h4>
+								<p class="institution">Uniwersytet Wrocławski</p>
+							</div>
+							<div class="education-details">
+								<span class="location"><Icon icon="map_pin" size="1.2em" /> Wrocław, Poland</span>
+								<span class="duration"><Icon icon="calendar" size="1.2em" /> February 2022 - July 2022</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title animate-on-scroll" style="--animation-delay: 0.3s">Skills</h2>
+				<div class="content animate-on-scroll" style="--animation-delay: 0.3s">
+					<div class="skills-grid">
+						<div class="skill-category">
+							<h3>Programming Languages</h3>
+							<div class="skills-list">
+								<span class="skill-tag">
+									<img src="/tech-icons/python.svg" alt="Python" class="tech-icon" loading="lazy" /> Python
+								</span>
+								<span class="skill-tag">
+									<img src="/tech-icons/c++.svg" alt="C++" class="tech-icon" loading="lazy" /> C++
+								</span>
+								<span class="skill-tag">
+									<img src="/tech-icons/javascript.svg" alt="JavaScript" class="tech-icon" loading="lazy" /> JavaScript
+								</span>
+								<span class="skill-tag">
+									<img src="/tech-icons/html.svg" alt="HTML" class="tech-icon" loading="lazy" /> HTML
+								</span>
+								<span class="skill-tag">
+									<img src="/tech-icons/css.svg" alt="CSS" class="tech-icon" loading="lazy" /> CSS
+								</span>
+								<span class="skill-tag">
+									<img src="/tech-icons/sql.svg" alt="SQL" class="tech-icon" loading="lazy" /> SQL
+								</span>
+							</div>
+						</div>
+
+						<div class="skill-category">
+							<h3>Frameworks & Libraries</h3>
+							<div class="skills-list">
+								<span class="skill-tag">
+									<img src="/tech-icons/react.svg" alt="React" class="tech-icon" loading="lazy" /> React
+								</span>
+								<span class="skill-tag">
+									<img src="/tech-icons/nodejs.svg" alt="Node.js" class="tech-icon" loading="lazy" /> Node.js
+								</span>
+								<span class="skill-tag">
+									<img src="/tech-icons/expressjs.svg" alt="Express" class="tech-icon" loading="lazy" /> Express
+								</span>
+								<span class="skill-tag">
+									<img src="/tech-icons/fastapi.svg" alt="FastAPI" class="tech-icon" loading="lazy" /> FastAPI
+								</span>
+							</div>
+						</div>
+
+						<div class="skill-category">
+							<h3>AI & Data Science</h3>
+							<div class="skills-list">
+								<span class="skill-tag">
+									<img src="/tech-icons/tensorflow.svg" alt="TensorFlow" class="tech-icon" loading="lazy" /> TensorFlow
+								</span>
+								<span class="skill-tag">
+									<img src="/tech-icons/numpy.svg" alt="NumPy" class="tech-icon" loading="lazy" /> NumPy
+								</span>
+								<span class="skill-tag">
+									<img src="/tech-icons/pandas.svg" alt="Pandas" class="tech-icon" loading="lazy" /> Pandas
+								</span>
+								<span class="skill-tag">
+									<img src="/tech-icons/pytorch.svg" alt="PyTorch" class="tech-icon" loading="lazy" /> PyTorch
+								</span>
+								<span class="skill-tag">
+									<img src="/tech-icons/keras.svg" alt="Keras" class="tech-icon" loading="lazy" /> Keras
+								</span>
+							</div>
+						</div>
+
+						<div class="skill-category">
+							<h3>Developer Tools</h3>
+							<div class="skills-list">
+								<span class="skill-tag">
+									<img src="/tech-icons/git.svg" alt="Git" class="tech-icon" loading="lazy" /> Git
+								</span>
+								<span class="skill-tag">
+									<img src="/tech-icons/gitlab.svg" alt="GitLab" class="tech-icon" loading="lazy" /> GitLab
+								</span>
+								<span class="skill-tag">
+									<img src="/tech-icons/aws.svg" alt="AWS" class="tech-icon" loading="lazy" /> AWS
+								</span>
+								<span class="skill-tag">
+									<img src="/tech-icons/githubactions.svg" alt="github actions" class="tech-icon" loading="lazy" /> Github Actions
+								</span>
+								<span class="skill-tag">
+									<img src="/tech-icons/linux.svg" alt="Linux" class="tech-icon" loading="lazy" /> Linux
+								</span>
+								<span class="skill-tag">
+									<img src="/tech-icons/jenkins.svg" alt="Jenkins" class="tech-icon" loading="lazy" /> Jenkins
+								</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<ContactCTA />
+	</div>
+</BaseLayout>
+
+<style>
+	.about {
+		display: flex;
+		flex-direction: column;
+		gap: 3.5rem;
+	}
+
+	img {
+		margin-top: 1.5rem;
+		border-radius: 1.5rem;
+		box-shadow: var(--shadow-md);
+	}
+
+	section {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		color: var(--gray-200);
+	}
+
+	.section-title {
+		grid-column-start: 1;
+		font-size: var(--text-xl);
+		color: var(--gray-0);
+	}
+
+	.content {
+		grid-column: 2 / 4;
+	}
+
+	.content :global(a) {
+		text-decoration: 1px solid underline transparent;
+		text-underline-offset: 0.25em;
+		transition: text-decoration-color var(--theme-transition);
+	}
+
+	.content :global(a:hover),
+	.content :global(a:focus) {
+		text-decoration-color: currentColor;
+	}
+
+	 .education-grid {
+        display: grid;
+        gap: 2rem;
+    }
+
+    .education-item {
+        padding: 1.5rem;
+        border-radius: 1rem;
+        background: var(--gray-999_40);
+        border: 1px solid var(--gray-800);
+        transition: transform 0.2s ease;
+    }
+
+    .education-item:hover {
+        transform: translateY(-3px);
+    }
+
+    .education-header h4 {
+        font-size: var(--text-lg);
+        color: var(--gray-100);
+        margin-bottom: 0.5rem;
+    }
+
+    .institution {
+        font-size: var(--text-md);
+        color: var(--gray-200);
+        margin-bottom: 1rem;
+    }
+
+    .education-details {
+        display: flex;
+        gap: 1.5rem;
+        color: var(--gray-400);
+        font-size: var(--text-sm);
+    }
+
+    .location, .duration {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+	 .skills-grid {
+        display: grid;
+        gap: 2.5rem;
+    }
+
+    .skill-category h3 {
+        color: var(--gray-200);
+        font-size: var(--text-lg);
+        margin-bottom: 1rem;
+    }
+
+    .skills-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+	.skill-tag {
+    background: var(--gray-999_40);
+    border: 1px solid var(--gray-800);
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    font-size: var(--text-sm);
+    color: var(--gray-300);
+    transition: all 0.2s ease;
+    display: inline-flex; /* Changed back to inline-flex */
+    align-items: center;
+    gap: 0.5rem;
+    min-height: 2.5rem;
+}
+
+.tech-icon {
+   width: 1.2em; 
+   height: 1.2em;
+   filter: brightness(0) invert(var(--is-dark, 1));
+   display: block;
+   flex-shrink: 0;
+   transform: translateY(-12px);
+}
+
+:root.theme-dark {
+   --is-dark: 1;
+}
+
+:root:not(.theme-dark) {
+   --is-dark: 0; 
+}
+
+.skill-tag:hover {
+    transform: translateY(-2px);
+    color: var(--gray-100);
+    border-color: var(--gray-700);
+    background: var(--gray-800);
+}
+
+.tech-icon.colored {
+    filter: none;
+}
+
+    @media (min-width: 50em) {
+        .skills-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (min-width: 50em) {
+        .education-grid {
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        }
+    }
+
+	@media (min-width: 50em) {
+		.about {
+			display: grid;
+			grid-template-columns: 1fr 60% 1fr;
+		}
+
+		.about > :global(:first-child) {
+			grid-column-start: 2;
+		}
+
+		section {
+			display: contents;
+			font-size: var(--text-lg);
+		}
+	}
+	 /* Add animation styles to existing styles */
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    transition-delay: var(--animation-delay, 0s);
+  }
+
+  .animate-on-scroll.animate {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .animate-on-scroll {
+      transition: none;
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+</style>

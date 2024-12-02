@@ -1,0 +1,75 @@
+---
+import CallToAction from './CallToAction.astro';
+import Icon from './Icon.astro';
+---
+
+<aside>
+	<div class="header-section ${Astro.props.class || ''}">
+		<h2>Want to work together?</h2>
+		<a href="https://drive.google.com/file/d/1hOfZznpQV3HDm-z8SXS3ixcF_ItQgQ80/view?usp=sharing" class="resume-link">
+			Get my resume <Icon icon="arrow-right" size="1.2em" />
+		</a>
+	</div>
+	<CallToAction href="mailto:sergiorodriguezvazquez99@gmail.com?Subject=Interested%20in%20work%20with%20you!">
+		Send Me a Message
+		<Icon icon="paper-plane-tilt" size="1.2em" />
+	</CallToAction>
+</aside>
+
+<style>
+	aside {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 3rem;
+		border-top: 1px solid var(--gray-800);
+		border-bottom: 1px solid var(--gray-800);
+		padding: 5rem 1.5rem;
+		background-color: var(--gray-999_40);
+		box-shadow: var(--shadow-sm);
+	}
+
+	.header-section {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 0.5rem;
+	}
+
+	h2 {
+		font-size: var(--text-xl);
+		text-align: center;
+		max-width: 15ch;
+	}
+
+	.resume-link {
+		font-size: var(--text-lg);
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		transition: color 0.2s ease;
+	}
+
+
+	.resume-link:hover {
+		color: var(--gray-200);
+	}
+
+	@media (min-width: 50em) {
+		aside {
+			padding: 7.5rem;
+			flex-direction: row;
+			flex-wrap: wrap;
+			justify-content: space-between;
+		}
+
+		.header-section {
+			align-items: flex-start;
+		}
+
+		h2 {
+			font-size: var(--text-3xl);
+			text-align: left;
+		}
+	}
+</style>
