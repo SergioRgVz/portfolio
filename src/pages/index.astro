@@ -19,7 +19,7 @@ import WorkTimeline from '../components/WorkTimeline.astro';
 
 <BaseLayout>
 <head>
-  <link rel="preload" href="/assets/portrait.jpg" as="image">
+  <link rel="preload" href="/portfolio/assets/portrait.jpg" as="image">
 </head>
 	<div class="stack gap-20 lg:gap-48">
 		<div class="wrapper stack gap-8 lg:gap-20">
@@ -37,7 +37,7 @@ import WorkTimeline from '../components/WorkTimeline.astro';
 				</Hero>
 
 								<Image 
-				src='/assets/portrait.jpg' 
+				src='/portfolio/assets/portrait.jpg' 
 				width={480}
 				height={620} 
 				alt="Sergio Rodriguez smiling in restaurant"
@@ -196,7 +196,7 @@ import WorkTimeline from '../components/WorkTimeline.astro';
 		top: 0;
 		transform: translateY(-75%) translateX(-50%);
 		background:
-			url('/assets/backgrounds/noise.png') top center/220px repeat,
+			url('/portfolio/assets/backgrounds/noise.png') top center/220px repeat,
 			var(--hero-bg) center center / var(--bg-gradient-size) no-repeat,
 			var(--gray-999);
 		background-blend-mode: overlay, normal, normal, normal;

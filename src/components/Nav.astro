@@ -5,10 +5,10 @@ import type { iconPaths } from './IconPaths';
 
 /** Main menu items */
 const textLinks: { label: string; href: string }[] = [
-	{ label: 'Home', href: '/' },
+	{ label: 'Home', href: '/portfolio/' },
 	//{ label: 'Work', href: '/work/' },
 	//{label: 'Projects', href: '/projects'},
-	{ label: 'About', href: '/about/' },
+	{ label: 'About', href: '/portfolio/about/' },
 ];
 
 /** Icon links to social media — edit these with links to your profiles! */
@@ -22,16 +22,16 @@ const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[]
 
 /** Test if a link is pointing to the current page. */
 const isCurrentPage = (href: string) => {
-	let pathname = Astro.url.pathname.replace(import.meta.env.BASE_URL, '');
-	if (pathname.at(0) !== '/') pathname = '/' + pathname;
-	if (pathname.at(-1) !== '/') pathname += '/';
-	return pathname === href || (href !== '/' && pathname.startsWith(href));
+    let pathname = Astro.url.pathname;
+    if (pathname.at(-1) !== '/') pathname += '/';
+    return pathname === href || (href !== '/portfolio/' && pathname.startsWith(href));
 };
+
 ---
 
 <nav>
 	<div class="menu-header">
-		<a href="/" class="site-title">
+		<a href="/portfolio" class="site-title">
 			<Icon icon="terminal-window" color="var(--accent-regular)" size="1.6em" gradient />
 			Sergio R.V.
 		</a>

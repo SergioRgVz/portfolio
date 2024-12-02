@@ -6,10 +6,9 @@ import tailwind from '@astrojs/tailwind';
 
 // https://astro.build/config
 export default defineConfig({
-  // compressHTML: true,
-  // output: 'static',
+  site: 'https://sergiorgvz.github.io',
+  base: '/portfolio',
   integrations: [
     tailwind(),
   ]
 });
-
